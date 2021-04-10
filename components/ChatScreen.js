@@ -165,7 +165,7 @@ const HeaderIcon = styled.div``;
 const MessageContainer = styled.div`
 	padding: 30px;
 	background-color: #e5ded8;
-	min-height: 90vh;
+	min-height: calc(100vh - 156px);
 `;
 
 const EndOfMessage = styled.div`
