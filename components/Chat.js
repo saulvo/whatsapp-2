@@ -14,8 +14,8 @@ function Chat({ id, users }) {
 	);
 
 	const enterChat = () => {
-		router.push(`/chat/${id}`)
-	}
+		router.push(`/chat/${id}`);
+	};
 
 	const recipient = recipientSnapshot?.docs?.[0]?.data();
 	const recipientEmail = getRecipientEmail(users, user);
@@ -28,7 +28,7 @@ function Chat({ id, users }) {
 				<UserAvatar>{recipientEmail[0]}</UserAvatar>
 			)}
 
-			<p>{recipientEmail}</p>
+			<RecipientEmail>{recipientEmail}</RecipientEmail>
 		</Container>
 	);
 }
@@ -45,9 +45,22 @@ const Container = styled.div`
 	:hover {
 		background-color: #eee;
 	}
+
+	@media only screen and (max-width: 575px) {
+		padding: 5px;
+		> div {
+			margin: 5px auto;
+		}
+	}
+
 `;
 
 const UserAvatar = styled(Avatar)`
 	margin: 5px;
 	margin-right: 15px;
+`;
+const RecipientEmail = styled.div`
+	@media only screen and (max-width: 575px) {
+		display: none;
+	}
 `;

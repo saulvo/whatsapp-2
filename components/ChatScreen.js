@@ -158,9 +158,26 @@ const HeaderInformation = styled.div`
 		font-size: 14px;
 		color: gray;
 	}
+	@media only screen and (max-width: 575px) {
+		> * {
+			margin: 5px 0;
+		}
+		h3 {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 50vw;
+		}
+	}
 `;
 
-const HeaderIcon = styled.div``;
+const HeaderIcon = styled.div`
+	@media only screen and (max-width: 575px) {
+		> button {
+			padding: 5px;
+		}
+	}
+`;
 
 const MessageContainer = styled.div`
 	padding: 30px;
@@ -191,4 +208,10 @@ const Input = styled.input`
 	padding: 20px;
 	margin-left: 15px;
 	margin-right: 15px;
+	@media only screen and (max-width: 575px) {
+		width: 100%;
+		max-width:62vw;
+		margin-left:2.5vw;
+		margin-right:2.5vw;
+	}
 `;

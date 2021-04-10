@@ -67,4 +67,5 @@ const ChatContainer = styled.div`
 	}
 	-ms-overflow-style: none; /*IE and Edge*/
 	scrollbar-width: none; /* Firefox */
+	@media only screen and (max-width:575px) {flex: 0.8}
 `;

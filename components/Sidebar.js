@@ -62,7 +62,7 @@ function Sidebar() {
 				<SearchInput placeholder="Search in chats" />
 			</Search>
 
-			<SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
+			<SidebarButton onClick={createChat}>NEW CHAT</SidebarButton>
 
 			{/* List of chats */}
 			{chatsSnapshot?.docs.map((chat) => (
@@ -87,6 +87,11 @@ const Container = styled.div`
 	}
 	-ms-overflow-style: none; /*IE and Edge*/
 	scrollbar-width: none; /* Firefox */
+
+	@media only screen and (max-width:575px) {
+		min-width: 65px;
+    flex: 0.2;
+	}
 `;
 
 const Search = styled.div`
@@ -94,6 +99,9 @@ const Search = styled.div`
 	align-items: center;
 	padding: 20px;
 	border-radius: 2px;
+	@media only screen and (max-width:575px) {
+		display: none;
+	}
 `;
 
 const SidebarButton = styled(Button)`
@@ -131,4 +139,8 @@ const UserAvatar = styled(Avatar)`
 	}
 `;
 
-const IconsContainer = styled.div``;
+const IconsContainer = styled.div`
+	@media only screen and (max-width:575px) {
+		display: none;
+	}
+`;
